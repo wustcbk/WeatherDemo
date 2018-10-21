@@ -20,7 +20,7 @@ public class WeatherMainActivityViewModel {
     }
 
     public void requestWeatherByCityName() {
-        DataRequestRepos.getInstance().liveWeatherGet("440300")//深圳:adcode:440300 citycode:0755
+        DataRequestRepos.getInstance().forecastWeatherGet("440300")//深圳:adcode:440300 citycode:0755
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         new Action1<WeatherResponseData>() {

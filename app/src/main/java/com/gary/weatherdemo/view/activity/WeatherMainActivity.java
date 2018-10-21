@@ -3,6 +3,7 @@ package com.gary.weatherdemo.view.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.gary.weatherdemo.room.CityForecastDbManager;
 import com.gary.weatherdemo.viewmodel.WeatherMainActivityViewModel;
 import com.gary.weatherdemo.databinding.WeatherMainActivityBinding;
 
