@@ -53,6 +53,7 @@ public class WeatherRecyclerAdapter extends RecyclerView.Adapter<WeatherRecycler
         private final WeatherForecastDayBinding binding;
 
         public WeatherForecastDayViewHolder(View itemView) {
+            super(itemView);
             binding = WeatherForecastDayBinding.bind(itemView);
         }
 

@@ -32,7 +32,9 @@ public class WeatherConfig {
     }
 
     public void setKeyDefaultCityAdcode(String adcode) {
-        sharedPreferences.edit().putString(KEY_DEFAULT_CITY_ADCODE, adcode);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_DEFAULT_CITY_ADCODE, adcode);
+        editor.commit();
     }
 
     //===================================================================================================

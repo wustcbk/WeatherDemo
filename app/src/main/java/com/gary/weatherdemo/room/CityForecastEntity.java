@@ -1,5 +1,9 @@
 package com.gary.weatherdemo.room;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 import com.gary.weatherdemo.model.WeatherForecastData;
 
 //  高德天气预报数据表实体类

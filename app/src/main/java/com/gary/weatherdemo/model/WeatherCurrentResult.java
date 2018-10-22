@@ -12,7 +12,7 @@ public class WeatherCurrentResult {
 
     @SerializedName("city")
     @Expose
-    public final String province = null;
+    public final String city = null;
 
     @SerializedName("adcode")
     @Expose

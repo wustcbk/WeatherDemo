@@ -2,6 +2,10 @@ package com.gary.weatherdemo.network;
 
 import com.gary.weatherdemo.network.response.WeatherResponseData;
 
+import io.reactivex.Observable;
+import io.reactivex.schedulers.Schedulers;
+import rx.android.schedulers.AndroidSchedulers;
+
 public class DataRequestRepos {
     private static DataRequestRepos dataRequestRepos;
 
