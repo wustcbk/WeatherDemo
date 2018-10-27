@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data class="com.gary.weatherdemo.databinding.WeatherForecastDayBinding">
+
         <variable
             name="viewModel"
-            type="com.gary.weatherdemo.viewmodel.WeatherForecastDayViewModel"/>
+            type="com.gary.weatherdemo.viewmodel.WeatherForecastDayViewModel" />
     </data>
 
     <LinearLayout
@@ -16,22 +17,26 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.weatherForecast.date}"/>
+            android:text="@{viewModel.weatherForecast.date}" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.weatherForecast.dayweather}"/>
+            android:text="@{viewModel.weatherForecast.dayweather}" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.weatherForecast.daytemp}"/>
+            android:text="@{viewModel.weatherForecast.daytemp}" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.weatherForecast.daywind}"/>
+            android:text="@{viewModel.weatherForecast.daywind}" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.weatherForecast.daypower}"/>
+            android:text="@{viewModel.weatherForecast.daypower}" />
     </LinearLayout>
 </layout>

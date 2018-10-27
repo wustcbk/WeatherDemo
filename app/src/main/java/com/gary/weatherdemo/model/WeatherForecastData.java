@@ -5,6 +5,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/**
+ * Created by GaryCao on 2018/10/25.
+ */
 public class WeatherForecastData {
     @SerializedName("date")
     @Expose

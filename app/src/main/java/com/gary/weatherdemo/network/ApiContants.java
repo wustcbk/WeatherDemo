@@ -1,6 +1,8 @@
 package com.gary.weatherdemo.network;
 
-
+/**
+ * Created by GaryCao on 2018/10/25.
+ */
 public class ApiContants {
     //高德天气：服务API示例
     //reference to : https://lbs.amap.com/api/webservice/guide/api/weatherinfo

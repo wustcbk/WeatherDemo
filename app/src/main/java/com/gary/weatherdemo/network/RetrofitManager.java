@@ -8,6 +8,9 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Created by GaryCao on 2018/10/25.
+ */
 public class RetrofitManager {
     private static final int DEFAULT_CONNECT_TIME = 20;
     private static final int DEFAULT_WRITE_TIME = 50;
@@ -16,7 +19,6 @@ public class RetrofitManager {
     private OkHttpClient okHttpClient;
     private Retrofit retrofit;
     private static RetrofitManager retrofitManager;
-    private static ApiService apiService;
 
     private RetrofitManager() {
         initOkHttpClient();
@@ -39,10 +41,13 @@ public class RetrofitManager {
                 .connectTimeout(DEFAULT_CONNECT_TIME, TimeUnit.SECONDS)//连接超时时间
                 .writeTimeout(DEFAULT_WRITE_TIME, TimeUnit.SECONDS)//设置写操作超时时间
                 .readTimeout(DEFAULT_READ_TIME, TimeUnit.SECONDS)//设置读操作超时时间
-                /*.addInterceptor(httpLoggingInterceptor)*/
+                .addInterceptor(httpLoggingInterceptor)
                 .build();
     }
 
+    /**
+     * 单例
+     */
     public synchronized static RetrofitManager getInstance() {
         if (retrofitManager == null) {
             retrofitManager = new RetrofitManager();
@@ -50,14 +55,10 @@ public class RetrofitManager {
         return retrofitManager;
     }
 
+    /**
+     * 泛型方法
+     */
     public <T> T create(Class<T> service) {
         return retrofit.create(service);
-    }
-
-    public ApiService getApiClient() {
-        if (apiService == null) {
-            apiService = getInstance().create(ApiService.class);
-        }
-        return apiService;
     }
 }

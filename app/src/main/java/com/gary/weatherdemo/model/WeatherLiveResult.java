@@ -5,7 +5,10 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class WeatherCurrentResult {
+/**
+ * Created by GaryCao on 2018/10/25.
+ */
+public class WeatherLiveResult {
     @SerializedName("province")
     @Expose
     public final String province = null;

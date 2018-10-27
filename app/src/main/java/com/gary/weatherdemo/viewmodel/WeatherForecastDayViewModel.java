@@ -14,9 +14,9 @@ public class WeatherForecastDayViewModel {
     //==============================================================================================
     //for test //TBD :需考虑并发和耗时
     private void insertCityForecastInfo(){
-        CityForecastEntity entity = new CityForecastEntity(weatherForecast);
+        /*CityForecastEntity entity = new CityForecastEntity(weatherForecast);
         entity.setAdcode("440300"); //深圳:adcode:440300 citycode:0755
         entity.setCityName("深圳");
-        CityForecastDbManager.getInstance().getDb().cityForecastDAO().insert(entity);
+        CityForecastDbManager.getInstance().getDb().cityForecastDAO().insert(entity);*/
     }
 }

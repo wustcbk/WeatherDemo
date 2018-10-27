@@ -1,24 +1,24 @@
 package com.gary.weatherdemo.view.activity;
 
+import android.app.Activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 
-import com.gary.weatherdemo.room.CityForecastDbManager;
+import com.gary.weatherdemo.R;
 import com.gary.weatherdemo.viewmodel.WeatherMainActivityViewModel;
 import com.gary.weatherdemo.databinding.WeatherMainActivityBinding;
 
-
-
-public class WeatherMainActivity extends AppCompatActivity {
+public class WeatherMainActivity extends Activity {
     private WeatherMainActivityViewModel viewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init();
     }
-    
-    private void init(){
+
+    private void init() {
         WeatherMainActivityBinding binding = DataBindingUtil.<WeatherMainActivityBinding>setContentView(this, R.layout.activity_weather_main);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         viewModel = new WeatherMainActivityViewModel();
@@ -27,7 +27,7 @@ public class WeatherMainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        if (viewModel != null){
+        if (viewModel != null) {
             viewModel.requestWeatherByCityName();
         }
         super.onResume();

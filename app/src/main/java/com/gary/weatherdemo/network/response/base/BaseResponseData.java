@@ -3,6 +3,9 @@ package com.gary.weatherdemo.network.response.base;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Created by GaryCao on 2018/10/25.
+ */
 public class BaseResponseData {
     @SerializedName("status")
     @Expose
@@ -21,10 +24,10 @@ public class BaseResponseData {
     private final String infocode = null;
 
     public boolean isSuccessful() {
-        return status != null && status.eqauls("1");
+        return status != null && status.equals("1");
     }
 
-    public boolean isInfoValid() {
-        return infocode != null && infocode.eqauls("1000");
+    public boolean isResponseDataValid() {
+        return infocode != null && infocode.equals("1000");
     }
 }

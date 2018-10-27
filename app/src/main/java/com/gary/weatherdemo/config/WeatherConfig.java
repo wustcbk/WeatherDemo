@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 
 import com.gary.weatherdemo.base.MyApplication;
 
+/**
+ * Created by GaryCao on 2018/10/25.
+ */
 public class WeatherConfig {
     private static final String WEATHER_CONFIG = "weather_config";
     private static final String KEY_DEFAULT_CITY_ADCODE = "def_adcode";

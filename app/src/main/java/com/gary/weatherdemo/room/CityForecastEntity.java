@@ -6,41 +6,45 @@ import android.arch.persistence.room.PrimaryKey;
 
 import com.gary.weatherdemo.model.WeatherForecastData;
 
-//  高德天气预报数据表实体类
-@Entity(tableName = "city_forecast")
+/**
+ * Created by GaryCao on 2018/10/25.
+ */
+@Entity(tableName = CityForecastEntity.TABLE_NAME)
 public class CityForecastEntity {
+    public static final String TABLE_NAME = "city_forecast";
+
     @PrimaryKey
-    private long id;
+    public long id;
 
     @ColumnInfo(name = "city_name")
-    private String city_name;
+    public String city_name;
 
     @ColumnInfo(name = "adcode")
-    private String adcode;
+    public String adcode;
 
     @ColumnInfo(name = "date")
-    private String date;
+    public String date;
 
     @ColumnInfo(name = "week")
-    private String week;
+    public String week;
 
     @ColumnInfo(name = "dayweather")
-    private String dayweather;
+    public String dayweather;
 
     @ColumnInfo(name = "nightweather")
-    private String nightweather;
+    public String nightweather;
 
     @ColumnInfo(name = "daywind")
-    private String daywind;
+    public String daywind;
 
     @ColumnInfo(name = "nightwind")
-    private String nightwind;
+    public String nightwind;
 
     @ColumnInfo(name = "daypower")
-    private String daypower;
+    public String daypower;
 
     @ColumnInfo(name = "nightpower")
-    private String nightpower;
+    public String nightpower;
 
     public void setCityName(String cityname) {
         city_name = cityname;
@@ -86,12 +90,12 @@ public class CityForecastEntity {
         this.daypower = daypower;
     }
 
-    public CityForecastEntity(WeatherForecastData data) {
+    /*public CityForecastEntity(WeatherForecastData data) {
         this.date = data.date;
         this.dayweather = data.dayweather;
         this.nightweather = data.nightweather;
         this.daywind = data.daywind;
         this.nightwind = data.nightwind;
         this.daypower = data.nightpower;
-    }
+    }*/
 }

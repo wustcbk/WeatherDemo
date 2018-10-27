@@ -6,11 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
+import com.gary.weatherdemo.R;
 import com.gary.weatherdemo.model.WeatherAllResult;
 import com.gary.weatherdemo.model.WeatherForecastData;
-import com.gary.weatherdemo.network.response.WeatherResponseData;
+import com.gary.weatherdemo.network.response.WeatherAllResponseData;
 import com.gary.weatherdemo.viewmodel.WeatherForecastDayViewModel;
+import com.gary.weatherdemo.databinding.WeatherForecastDayBinding;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public class WeatherRecyclerAdapter extends RecyclerView.Adapter<WeatherRecycler
     public WeatherRecyclerAdapter() {
     }
 
-    public void setAdapterData(WeatherResponseData weatherGetResponse) {
+    public void setAdapterData(WeatherAllResponseData weatherGetResponse) {
         if(null == weatherGetResponse ){
             return;
         }
@@ -49,7 +50,17 @@ public class WeatherRecyclerAdapter extends RecyclerView.Adapter<WeatherRecycler
         return weatherUIDataArrayList.size();
     }
 
-    public class WeatherForecastDayViewHolder extends RecyclerView.ViewHolder<WeatherForecastData> {
+
+    /*public class MainTopicViewHolder extends RecyclerView.ViewHolder {
+        TextView tv_topic;
+        public MainTopicViewHolder(View itemView) {
+            super(itemView);
+            if (itemView == mHeaderView) return;
+            tv_topic = (TextView) itemView.findViewById(R.id.tv_topic);
+        }
+    }*/
+
+    public class WeatherForecastDayViewHolder extends RecyclerView.ViewHolder{
         private final WeatherForecastDayBinding binding;
 
         public WeatherForecastDayViewHolder(View itemView) {
