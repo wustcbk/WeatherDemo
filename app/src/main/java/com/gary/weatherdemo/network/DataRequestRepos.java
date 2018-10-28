@@ -3,7 +3,6 @@ package com.gary.weatherdemo.network;
 import com.gary.weatherdemo.network.response.WeatherLivesResponseData;
 
 import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
@@ -54,6 +53,6 @@ public class DataRequestRepos {
     /*高德天气：当前天气查询接口:深圳*/
     private void getShenzhenForecastWeather() {
         DataRequestRepos.getInstance().liveWeatherGet("440300")//深圳:adcode:440300 citycode:0755
-                .observeOn(AndroidSchedulers.mainThread());
+                /*.observeOn(AndroidSchedulers.mainThread())*/;
     }
 }
