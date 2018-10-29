@@ -1,7 +1,9 @@
 package com.gary.weatherdemo.viewmodel;
 
+import android.arch.lifecycle.LiveData;
 import android.databinding.ObservableField;
 
+import com.gary.weatherdemo.bean.CityPageInfo;
 import com.gary.weatherdemo.network.DataRequestRepos;
 import com.gary.weatherdemo.network.response.WeatherAllResponseData;
 import com.gary.weatherdemo.view.adapter.WeatherRecyclerAdapter;
@@ -15,6 +17,8 @@ import io.reactivex.schedulers.Schedulers;
 public class WeatherMainActivityViewModel {
     public final ObservableField<WeatherRecyclerAdapter> weatherAdapter = new ObservableField<>();
     private final WeatherRecyclerAdapter adapter;
+    //TBD: LiveData module
+    private LiveData<CityPageInfo> cityPageInfoLiveData;
 
     public WeatherMainActivityViewModel() {
         adapter = new WeatherRecyclerAdapter();
@@ -49,5 +53,13 @@ public class WeatherMainActivityViewModel {
 
                     }
                 });
+    }
+
+    public void setCurrentCityIndex() {
+
+    }
+
+    public void initCityPageInfo() {
+
     }
 }
