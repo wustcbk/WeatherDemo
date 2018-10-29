@@ -50,16 +50,6 @@ public class WeatherRecyclerAdapter extends RecyclerView.Adapter<WeatherRecycler
         return weatherUIDataArrayList.size();
     }
 
-
-    /*public class MainTopicViewHolder extends RecyclerView.ViewHolder {
-        TextView tv_topic;
-        public MainTopicViewHolder(View itemView) {
-            super(itemView);
-            if (itemView == mHeaderView) return;
-            tv_topic = (TextView) itemView.findViewById(R.id.tv_topic);
-        }
-    }*/
-
     public class WeatherForecastDayViewHolder extends RecyclerView.ViewHolder{
         private final WeatherForecastDayBinding binding;
 

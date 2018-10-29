@@ -1,8 +1,6 @@
 package com.gary.weatherdemo.viewmodel;
 
 import com.gary.weatherdemo.model.WeatherForecastData;
-import com.gary.weatherdemo.room.CityForecastDbManager;
-import com.gary.weatherdemo.room.CityForecastEntity;
 
 public class WeatherForecastDayViewModel {
     public final WeatherForecastData weatherForecast;
@@ -17,6 +15,6 @@ public class WeatherForecastDayViewModel {
         /*CityForecastEntity entity = new CityForecastEntity(weatherForecast);
         entity.setAdcode("440300"); //深圳:adcode:440300 citycode:0755
         entity.setCityName("深圳");
-        CityForecastDbManager.getInstance().getDb().cityForecastDAO().insert(entity);*/
+        CityForecastDatabase.getInstance().getDb().cityForecastDAO().insert(entity);*/
     }
 }

@@ -1,12 +1,11 @@
 package com.gary.weatherdemo.base;
 
 import android.app.Application;
-import android.support.multidex.MultiDexApplication;
 
 /**
  * Created by GaryCao on 2018/10/25.
  */
-public class MyApplication extends MultiDexApplication {
+public class MyApplication extends /*MultiDex*/Application {
     private static MyApplication myApplication;
 
     @Override

@@ -5,22 +5,22 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by GaryCao on 2018/10/25.
  */
-public class RetrofitManager {
+public class RetrofitFactory {
     private static final int DEFAULT_CONNECT_TIME = 20;
     private static final int DEFAULT_WRITE_TIME = 50;
     private static final int DEFAULT_READ_TIME = 30;
 
     private OkHttpClient okHttpClient;
     private Retrofit retrofit;
-    private static RetrofitManager retrofitManager;
+    private static RetrofitFactory retrofitFactory;
 
-    private RetrofitManager() {
+    private RetrofitFactory() {
         initOkHttpClient();
         initRetrofit();
     }
@@ -30,7 +30,7 @@ public class RetrofitManager {
                 .baseUrl(ApiContants.AMAP_BASE_URL)//设置服务器路径
                 .client(okHttpClient)//设置使用okhttp网络请求
                 .addConverterFactory(GsonConverterFactory.create())//添加转化库，默认是Gson
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())//添加回调库，采用RxJava
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//添加回调库，采用RxJava
                 .build();
     }
 
@@ -46,13 +46,13 @@ public class RetrofitManager {
     }
 
     /**
-     * 单例
+     * GoF1: 单例
      */
-    public synchronized static RetrofitManager getInstance() {
-        if (retrofitManager == null) {
-            retrofitManager = new RetrofitManager();
+    public synchronized static RetrofitFactory getInstance() {
+        if (retrofitFactory == null) {
+            retrofitFactory = new RetrofitFactory();
         }
-        return retrofitManager;
+        return retrofitFactory;
     }
 
     /**

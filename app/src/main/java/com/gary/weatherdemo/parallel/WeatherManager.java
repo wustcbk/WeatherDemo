@@ -5,7 +5,9 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.Log;
 
-
+/**
+ * Created by GaryCao on 2018/10/25.
+ */
 public class WeatherManager {
     private final String TAG = "WeatherManager";
     private static WeatherManager weatherManager;

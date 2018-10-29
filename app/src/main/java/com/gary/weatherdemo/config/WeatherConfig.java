@@ -11,8 +11,9 @@ import com.gary.weatherdemo.base.MyApplication;
 public class WeatherConfig {
     private static final String WEATHER_CONFIG = "weather_config";
     private static final String KEY_DEFAULT_CITY_ADCODE = "def_adcode";
-    private final String VALUE_DEFAULT_CITY_ADCODE = "";
 
+    /*默认天气adcode*/
+    private final String VALUE_DEFAULT_CITY_ADCODE = "";
     private Context context;
     private static SharedPreferences sharedPreferences;
 
