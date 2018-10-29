@@ -8,5 +8,8 @@
    文档参照：Android Architecture Components：https://developer.android.google.cn/topic/libraries/architecture/
 3. AdMob&Firebase（广告和统计）：
    文档参照：https://www.jianshu.com/p/dcebf2c7c9e3
+4. widget天气小部件；
+5. LiveData： 实现View与ViewModel 数据交互解耦（TBD）；
+6. 高德XML文件解析：转为本地存储高德adcode和城市信息对照表，用于本地天气动态查询api调用（TBD）；
 
 备注说明：部分内容借鉴网络代码，不能用于商业用途，转载请注明出处，谢谢！ 
