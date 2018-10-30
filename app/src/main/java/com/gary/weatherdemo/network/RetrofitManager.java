@@ -11,16 +11,16 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by GaryCao on 2018/10/25.
  */
-public class RetrofitFactory {
+public class RetrofitManager {
     private static final int DEFAULT_CONNECT_TIME = 20;
     private static final int DEFAULT_WRITE_TIME = 50;
     private static final int DEFAULT_READ_TIME = 30;
 
     private OkHttpClient okHttpClient;
     private Retrofit retrofit;
-    private static RetrofitFactory retrofitFactory;
+    private static RetrofitManager retrofitManager;
 
-    private RetrofitFactory() {
+    private RetrofitManager() {
         initOkHttpClient();
         initRetrofit();
     }
@@ -48,11 +48,11 @@ public class RetrofitFactory {
     /**
      * GoF1: 单例
      */
-    public synchronized static RetrofitFactory getInstance() {
-        if (retrofitFactory == null) {
-            retrofitFactory = new RetrofitFactory();
+    public synchronized static RetrofitManager getInstance() {
+        if (retrofitManager == null) {
+            retrofitManager = new RetrofitManager();
         }
-        return retrofitFactory;
+        return retrofitManager;
     }
 
     /**

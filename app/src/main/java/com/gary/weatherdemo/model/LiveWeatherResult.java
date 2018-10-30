@@ -3,12 +3,10 @@ package com.gary.weatherdemo.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 /**
  * Created by GaryCao on 2018/10/25.
  */
-public class WeatherLiveResult {
+public class LiveWeatherResult {
     @SerializedName("province")
     @Expose
     public final String province = null;

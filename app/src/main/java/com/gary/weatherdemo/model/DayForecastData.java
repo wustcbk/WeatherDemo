@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by GaryCao on 2018/10/25.
  */
-public class WeatherForecastData {
+public class DayForecastData {
     @SerializedName("date")
     @Expose
     public final String date = null;

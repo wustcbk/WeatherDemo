@@ -1,12 +1,12 @@
 package com.gary.weatherdemo.viewmodel;
 
-import com.gary.weatherdemo.model.WeatherForecastData;
+import com.gary.weatherdemo.model.DayForecastData;
 
-public class WeatherForecastDayViewModel {
-    public final WeatherForecastData weatherForecast;
+public class ForecastDayViewModel {
+    public final DayForecastData weatherForecast;
 
-    public WeatherForecastDayViewModel(WeatherForecastData WeatherForecastData) {
-        weatherForecast = WeatherForecastData;
+    public ForecastDayViewModel(DayForecastData DayForecastData) {
+        weatherForecast = DayForecastData;
     }
 
     //==============================================================================================

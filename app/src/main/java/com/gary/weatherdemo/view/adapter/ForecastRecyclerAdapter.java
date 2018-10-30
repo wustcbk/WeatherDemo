@@ -7,29 +7,25 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.gary.weatherdemo.R;
-import com.gary.weatherdemo.model.WeatherAllResult;
-import com.gary.weatherdemo.model.WeatherForecastData;
-import com.gary.weatherdemo.network.response.WeatherAllResponseData;
-import com.gary.weatherdemo.viewmodel.WeatherForecastDayViewModel;
 import com.gary.weatherdemo.databinding.WeatherForecastDayBinding;
+import com.gary.weatherdemo.model.AllForecastResult;
+import com.gary.weatherdemo.model.DayForecastData;
+import com.gary.weatherdemo.viewmodel.ForecastDayViewModel;
 
 import java.util.ArrayList;
 
-public class WeatherRecyclerAdapter extends RecyclerView.Adapter<WeatherRecyclerAdapter.WeatherForecastDayViewHolder> {
-    private ArrayList<WeatherForecastData> weatherUIDataArrayList = new ArrayList<>();
+public class ForecastRecyclerAdapter extends RecyclerView.Adapter<ForecastRecyclerAdapter.WeatherForecastDayViewHolder> {
+    private ArrayList<DayForecastData> weatherUIDataArrayList = new ArrayList<>();
 
-    public WeatherRecyclerAdapter() {
+    public ForecastRecyclerAdapter() {
     }
 
-    public void setAdapterData(WeatherAllResponseData weatherGetResponse) {
-        if(null == weatherGetResponse ){
+    public void setAdapterData(AllForecastResult allForecastResult) {
+        if (null == allForecastResult) {
             return;
         }
         weatherUIDataArrayList.clear();
-        WeatherAllResult weatherAllResult = weatherGetResponse.getWeatherAllResult();
-        if (weatherAllResult != null ) {
-            weatherUIDataArrayList =  (ArrayList<WeatherForecastData>) weatherAllResult.weatherForecastDataList;
-        }
+        weatherUIDataArrayList = (ArrayList<DayForecastData>) allForecastResult.dayForecastDataList;
         notifyDataSetChanged();
     }
 
@@ -50,7 +46,7 @@ public class WeatherRecyclerAdapter extends RecyclerView.Adapter<WeatherRecycler
         return weatherUIDataArrayList.size();
     }
 
-    public class WeatherForecastDayViewHolder extends RecyclerView.ViewHolder{
+    public class WeatherForecastDayViewHolder extends RecyclerView.ViewHolder {
         private final WeatherForecastDayBinding binding;
 
         public WeatherForecastDayViewHolder(View itemView) {
@@ -58,8 +54,8 @@ public class WeatherRecyclerAdapter extends RecyclerView.Adapter<WeatherRecycler
             binding = WeatherForecastDayBinding.bind(itemView);
         }
 
-        public void bind(@NonNull WeatherForecastData data) {
-            binding.setViewModel(new WeatherForecastDayViewModel(data));
+        public void bind(@NonNull DayForecastData data) {
+            binding.setViewModel(new ForecastDayViewModel(data));
         }
     }
 }

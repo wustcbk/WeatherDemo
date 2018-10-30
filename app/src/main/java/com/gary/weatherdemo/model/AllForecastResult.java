@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by GaryCao on 2018/10/25.
  */
-public class WeatherAllResult {
+public class AllForecastResult {
     @SerializedName("city")
     @Expose
     public final String city = null;
@@ -28,5 +28,5 @@ public class WeatherAllResult {
 
     @SerializedName("casts")
     @Expose
-    public final List<WeatherForecastData> weatherForecastDataList = null;
+    public final List<DayForecastData> dayForecastDataList = null;
 }

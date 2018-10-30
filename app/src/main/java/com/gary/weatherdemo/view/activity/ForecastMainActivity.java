@@ -6,16 +6,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.gary.weatherdemo.R;
-import com.gary.weatherdemo.base.Contants;
 import com.gary.weatherdemo.databinding.WeatherMainActivityBinding;
-import com.gary.weatherdemo.viewmodel.WeatherMainActivityViewModel;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
+import com.gary.weatherdemo.viewmodel.MainActivityViewModel;
 
-public class WeatherMainActivity extends Activity {
-    private WeatherMainActivityViewModel viewModel;
-    private AdView mAdView;
+public class ForecastMainActivity extends Activity {
+    private MainActivityViewModel viewModel;
+    // private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,17 +23,17 @@ public class WeatherMainActivity extends Activity {
     private void initViews() {
         WeatherMainActivityBinding binding = DataBindingUtil.<WeatherMainActivityBinding>setContentView(this, R.layout.activity_weather_main);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        viewModel = new WeatherMainActivityViewModel();
+        viewModel = new MainActivityViewModel();
         binding.setViewModel(viewModel);
     }
 
     private void initAdMob(){
         // Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713
-        MobileAds.initialize(this, Contants.ADMOB_APP_ID);
+        /*MobileAds.initialize(this, Constants.ADMOB_APP_ID);
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);*/
     }
 
     @Override

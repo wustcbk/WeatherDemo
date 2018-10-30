@@ -8,9 +8,9 @@ import android.util.Log;
 /**
  * Created by GaryCao on 2018/10/25.
  */
-public class WeatherManager {
-    private final String TAG = "WeatherManager";
-    private static WeatherManager weatherManager;
+public class ForecastTaskManager {
+    private final String TAG = "ForecastTaskManager";
+    private static ForecastTaskManager forecastTaskManager;
 
     /**
      * 处理耗时流程
@@ -22,8 +22,8 @@ public class WeatherManager {
      */
     private Handler uiHandler = new Handler();
 
-    public WeatherManager(Context context) {
-        Log.i(TAG, "WeatherManager()");
+    public ForecastTaskManager(Context context) {
+        Log.i(TAG, "ForecastTaskManager()");
         initWorkHandlerThread();
     }
 
@@ -40,11 +40,11 @@ public class WeatherManager {
         };
     }
 
-    public synchronized static WeatherManager getInstance(Context context) {
-        if (weatherManager == null) {
-            weatherManager = new WeatherManager(context);
+    public synchronized static ForecastTaskManager getInstance(Context context) {
+        if (forecastTaskManager == null) {
+            forecastTaskManager = new ForecastTaskManager(context);
         }
-        return weatherManager;
+        return forecastTaskManager;
     }
     //===================================================================================================
     //for test

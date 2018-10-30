@@ -4,8 +4,6 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-import com.gary.weatherdemo.model.WeatherForecastData;
-
 /**
  * Created by GaryCao on 2018/10/25.
  */
@@ -90,7 +88,7 @@ public class CityForecastEntity {
         this.daypower = daypower;
     }
 
-    /*public CityForecastEntity(WeatherForecastData data) {
+    /*public CityForecastEntity(DayForecastData data) {
         this.date = data.date;
         this.dayweather = data.dayweather;
         this.nightweather = data.nightweather;

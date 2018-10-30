@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.gary.weatherdemo.viewmodel.WeatherForecastDayViewModel" />
+            type="com.gary.weatherdemo.viewmodel.ForecastDayViewModel" />
     </data>
 
     <LinearLayout

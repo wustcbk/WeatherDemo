@@ -2,8 +2,7 @@
     android:minWidth="36dp"
     android:minHeight="36dp"
     android:updatePeriodMillis="3600000"
-    android:initialLayout="@layout/widget_current_weather"
+    android:initialLayout="@layout/widget_weather_main"
     android:resizeMode="horizontal|vertical"
-    android:widgetCategory="home_screen"
-    android:initialKeyguardLayout="@layout/widget_current_weather">
+    android:widgetCategory="home_screen">
 </appwidget-provider>
