@@ -42,4 +42,16 @@ public class LiveWeatherResult {
     @SerializedName("reporttime")
     @Expose
     public final String reporttime = null;
+
+    @Override
+    public String toString() {
+        return "LiveWeatherResult: province = " + province
+                + ",city =" + city
+                + ",adcode =" + adcode
+                + ",weather =" + weather
+                + ",temperature =" + temperature
+                + ",winddirection =" + winddirection
+                + ",windpower =" + windpower
+                + ",humidity =" + humidity;
+    }
 }

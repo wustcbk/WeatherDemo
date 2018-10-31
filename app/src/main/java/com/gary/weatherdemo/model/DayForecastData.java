@@ -3,8 +3,6 @@ package com.gary.weatherdemo.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 /**
  * Created by GaryCao on 2018/10/25.
  */
@@ -48,4 +46,20 @@ public class DayForecastData {
     @SerializedName("nightpower")
     @Expose
     public final String nightpower = null;
+
+
+    @Override
+    public String toString() {
+        return "[date = " + date
+                + ",week =" + week
+                + ",dayweather =" + dayweather
+                + ",nightweather =" + nightweather
+                + ",daytemp =" + daytemp
+                + ",nighttemp =" + nighttemp
+                + ",daywind =" + daywind
+                + ",nightwind =" + nightwind
+                + ",daypower =" + daypower
+                + ",nightpower =" + nightpower
+                +"]";
+    }
 }

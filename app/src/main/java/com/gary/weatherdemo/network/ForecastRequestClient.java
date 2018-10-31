@@ -32,7 +32,7 @@ public class ForecastRequestClient {
         return forecastRequestClient;
     }
 
-    /*高德天气：当前天气查询接口*/
+    /*高德天气：当前天气查询接口 Post*/
     public Observable<LiveWeatherResponseData> liveWeatherPost(final String adcode) {
         return apiService.livesweatherPost(adcode,
                 ApiContants.AMAP_USER_KEY_VALUE,
@@ -41,7 +41,7 @@ public class ForecastRequestClient {
                 .subscribeOn(Schedulers.io());
     }
 
-    /*高德天气：预报天气查询接口*/
+    /*高德天气：预报天气查询接口 Post*/
     public Observable<AllForecastResponseData> forecastWeatherPost(final String adcode) {
         return apiService.allweatherPost(adcode,
                 ApiContants.AMAP_USER_KEY_VALUE,
@@ -50,10 +50,28 @@ public class ForecastRequestClient {
                 .subscribeOn(Schedulers.io());
     }
 
-    /*高德天气：预报天气查询接口*/
-    public Observable<AllForecastResponseData> forecastWeatherGet(final String adcode) {
+    /*高德天气：预报天气查询接口 Get*/
+    /*public Observable<AllForecastResponseData> forecastWeatherGet(final String adcode) {
         String url = "https://restapi.amap.com/v3/weather/weatherInfo?city=110101&key=3b6729d0c40f23fde7c55ae90ee0921d&extensions=all&output=JSON\n";
         return apiService.weatherGet(url).subscribeOn(Schedulers.io());
+    }*/
+
+    /*高德天气：当前天气查询接口 Get*/
+    public Observable<LiveWeatherResponseData> livesWeatherGet(final String adcode) {
+        return apiService.livesweatherGet(adcode,
+                ApiContants.AMAP_USER_KEY_VALUE,
+                ApiContants.AMAP_USER_EXTENSION_VALUE_ALL,
+                ApiContants.AMAP_USER_OUTPUT_VALUE)
+                .subscribeOn(Schedulers.io());
+    }
+
+    /*高德天气：预报天气查询接口 Get*/
+    public Observable<AllForecastResponseData> forecastWeatherGet(final String adcode) {
+        return apiService.allweatherGet(adcode,
+                ApiContants.AMAP_USER_KEY_VALUE,
+                ApiContants.AMAP_USER_EXTENSION_VALUE_ALL,
+                ApiContants.AMAP_USER_OUTPUT_VALUE)
+                .subscribeOn(Schedulers.io());
     }
 
     //===================================================================================================

@@ -46,6 +46,8 @@ public class ForecastRecyclerAdapter extends RecyclerView.Adapter<ForecastRecycl
         return weatherUIDataArrayList.size();
     }
 
+
+    /*TBD: GoF5: 策略模式: 分别实现今天和以后的天气ViewHolder*/
     public class WeatherForecastDayViewHolder extends RecyclerView.ViewHolder {
         private final WeatherForecastDayBinding binding;
 

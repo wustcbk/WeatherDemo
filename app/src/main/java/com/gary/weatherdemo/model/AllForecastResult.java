@@ -29,4 +29,12 @@ public class AllForecastResult {
     @SerializedName("casts")
     @Expose
     public final List<DayForecastData> dayForecastDataList = null;
+
+    @Override
+    public String toString() {
+        return "AllForecastResult: province = " + province
+                + ",city =" + city
+                + ",adcode =" + adcode
+                + ",reporttime" + reporttime;
+    }
 }

@@ -8,7 +8,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Url;
+import retrofit2.http.Query;
 
 
 public interface ApiService {
@@ -31,7 +31,23 @@ public interface ApiService {
             @Field("output") String output
     );
 
-    @GET
+    /*@GET
     Observable<AllForecastResponseData> weatherGet(
-            @Url String url);
+            @Url String url);*/
+
+    @GET(ApiContants.AMAP_WEATHER_GET)
+    Observable<LiveWeatherResponseData> livesweatherGet(
+            @Query("city") String city,
+            @Query("key") String key,
+            @Query("extensions") String extensions,
+            @Query("output") String output
+    );
+
+    @GET(ApiContants.AMAP_WEATHER_GET)
+    Observable<AllForecastResponseData> allweatherGet(
+            @Query("city") String city,
+            @Query("key") String key,
+            @Query("extensions") String extensions,
+            @Query("output") String output
+    );
 }

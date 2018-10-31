@@ -87,13 +87,4 @@ public class CityForecastEntity {
     public void setNightPower(String nightpower) {
         this.daypower = daypower;
     }
-
-    /*public CityForecastEntity(DayForecastData data) {
-        this.date = data.date;
-        this.dayweather = data.dayweather;
-        this.nightweather = data.nightweather;
-        this.daywind = data.daywind;
-        this.nightwind = data.nightwind;
-        this.daypower = data.nightpower;
-    }*/
 }

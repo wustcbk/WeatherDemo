@@ -6,4 +6,9 @@ package com.gary.weatherdemo.bean;
 public class ForecastPageInfo {
     public String adrName;
     public String adcCode;
+
+    @Override
+    public String toString() {
+        return "ForecastPageInfo: adrName = " + adrName + ",adcCode =" + adcCode;
+    }
 }

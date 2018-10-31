@@ -24,7 +24,7 @@ public class MainActivityViewModel {
 
     /*GoF2: 观察者模式：注册监听&回调实现*/
     public void requestWeatherByCityName() {
-        ForecastRequestClient.getInstance().forecastWeatherGet("440300")//深圳:adcode:440300
+        ForecastRequestClient.getInstance().forecastWeatherPost("440300")//深圳:adcode:440300
                 .subscribeOn(Schedulers.io())//设置1：在io子线程执行
                 .observeOn(AndroidSchedulers.mainThread()) //设置2：在UI主线程执行回调
                 .subscribe(new Observer<AllForecastResponseData>() {//设置3：UI主线程回調實現
