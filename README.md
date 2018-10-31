@@ -3,7 +3,7 @@
 功能点说明：
 1. 高德天气API：
    文档参照：https://lbs.amap.com/api/webservice/guide/api/weatherinfo/
-   实现情况：Get方式可以正常返回查询数据并UI显示；Post方式因高德服务器权限获取fail，非框架代码问题（已测试其他url，获取数据正常），待后续进一步分析。
+   实现情况：Get&Post方式可以正常返回查询数据并UI显示；
 2. MVVM框架，
    文档参照：Android Architecture Components：https://developer.android.google.cn/topic/libraries/architecture/
 3. AdMob&Firebase（广告和统计）：
