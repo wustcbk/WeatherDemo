@@ -3,7 +3,8 @@ package com.gary.weatherdemo.parallel;
 import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.util.Log;
+
+import com.gary.weatherdemo.utils.LogUtils;
 
 /**
  * Created by GaryCao on 2018/10/25.
@@ -13,22 +14,22 @@ public class ForecastTaskManager {
     private static ForecastTaskManager forecastTaskManager;
 
     /**
-     * 处理耗时流程
+     * process sub-thread works
      */
     private Handler threadHandler;
 
     /**
-     * 处理UI刷新
+     * process main-thread(UI thread) works
      */
     private Handler uiHandler = new Handler();
 
-    public ForecastTaskManager(Context context) {
-        Log.i(TAG, "ForecastTaskManager()");
+    private ForecastTaskManager(Context context) {
+        LogUtils.i(TAG, "ForecastTaskManager()");
         initWorkHandlerThread();
     }
 
     private void initWorkHandlerThread() {
-        Log.i(TAG, "initWorkHandlerThread");
+        LogUtils.i(TAG, "initWorkHandlerThread()");
         HandlerThread handlerThread = new HandlerThread("weather_thread");
         handlerThread.start();
 

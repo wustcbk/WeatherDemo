@@ -13,7 +13,7 @@ public class ForecastRequestClient {
     private static ForecastRequestClient forecastRequestClient;
     private static ApiService apiService;
 
-    public ForecastRequestClient() {
+    private ForecastRequestClient() {
         createApiClient();
     }
 

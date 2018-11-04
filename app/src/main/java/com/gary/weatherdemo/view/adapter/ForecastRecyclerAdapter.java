@@ -14,8 +14,8 @@ import com.gary.weatherdemo.viewmodel.ForecastDayViewModel;
 
 import java.util.ArrayList;
 
-public class ForecastRecyclerAdapter extends RecyclerView.Adapter<ForecastRecyclerAdapter.WeatherForecastDayViewHolder> {
-    private ArrayList<DayForecastData> weatherUIDataArrayList = new ArrayList<>();
+public class ForecastRecyclerAdapter extends RecyclerView.Adapter<ForecastRecyclerAdapter.ForecastDayViewHolder> {
+    private ArrayList<DayForecastData> weatherUIDataList = new ArrayList<>();
 
     public ForecastRecyclerAdapter() {
     }
@@ -24,34 +24,34 @@ public class ForecastRecyclerAdapter extends RecyclerView.Adapter<ForecastRecycl
         if (null == allForecastResult) {
             return;
         }
-        weatherUIDataArrayList.clear();
-        weatherUIDataArrayList = (ArrayList<DayForecastData>) allForecastResult.dayForecastDataList;
+        weatherUIDataList.clear();
+        weatherUIDataList = (ArrayList<DayForecastData>) allForecastResult.dayForecastDataList;
         notifyDataSetChanged();
     }
 
     @Override
-    public WeatherForecastDayViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ForecastDayViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_weather_forecast_day, parent, false);
-        return new WeatherForecastDayViewHolder(itemView);
+        return new ForecastDayViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(WeatherForecastDayViewHolder holder, int position) {
-        holder.bind(weatherUIDataArrayList.get(position));
+    public void onBindViewHolder(ForecastDayViewHolder holder, int position) {
+        holder.bind(weatherUIDataList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return weatherUIDataArrayList.size();
+        return weatherUIDataList.size();
     }
 
 
-    /*TBD: GoF5: 策略模式: 分别实现今天和以后的天气ViewHolder*/
-    public class WeatherForecastDayViewHolder extends RecyclerView.ViewHolder {
+    /*TBD: GoF5: 策略模式: 分别实现当前和预报天气ViewHolder*/
+    public class ForecastDayViewHolder extends RecyclerView.ViewHolder {
         private final WeatherForecastDayBinding binding;
 
-        public WeatherForecastDayViewHolder(View itemView) {
+        public ForecastDayViewHolder(View itemView) {
             super(itemView);
             binding = WeatherForecastDayBinding.bind(itemView);
         }
