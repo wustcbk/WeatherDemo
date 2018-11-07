@@ -21,10 +21,10 @@
 
 - 网络请求：
 实现异步网络请求框架封装。
-- AdMob&Firebase（）：
+- AdMob&Firebase（TBD）：
 实现广告载入和统计分析。文档参照：https://www.jianshu.com/p/dcebf2c7c9e3
 - XML配置文件：
-解析存储本地存储高德adcode和城市信息对照表，用于本地天气动态查询api调用（TBD）。
+解析存储本地存储高德adcode和城市信息对照表，用于本地天气动态查询api调用。
 
 
 ### Android Architecture Components document：
