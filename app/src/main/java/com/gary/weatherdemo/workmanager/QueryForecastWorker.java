@@ -1,7 +1,8 @@
 package com.gary.weatherdemo.workmanager;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
+
+import com.gary.weatherdemo.utils.LogUtils;
 
 import androidx.work.Worker;
 
@@ -15,19 +16,10 @@ public class QueryForecastWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        try {
-            //TBD
+        //TBD
 
-            // If there were no errors, return SUCCESS
-            return Result.SUCCESS;
-
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-            return Result.FAILURE;
-        } catch (Throwable throwable) {
-            // If there were errors, return FAILURE
-            Log.e(TAG, "Error increasing day", throwable);
-            return Result.FAILURE;
-        }
+        LogUtils.d(TAG,"doWork()");
+        // If there were no errors, return SUCCESS
+        return Result.SUCCESS;
     }
 }

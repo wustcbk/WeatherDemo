@@ -14,24 +14,19 @@ import androidx.work.WorkManager;
  * Created by GaryCao on 2018/11/04.
  */
 public class WorkerManagerImpl implements IWorkerManager {
+    // 设置任务约束
+    private static Constraints constraints = new Constraints.Builder()
+            .setRequiresDeviceIdle(true)
+            .setRequiresCharging(true)
+            .build();
 
     @Override
     public void loadAdrAdcodeConfig() {
         // 单次任务：OneTimeWorkRequest
-        /*OneTimeWorkRequest workRequest =
-                new OneTimeWorkRequest.Builder(LoadAdcodeConfigWorker.class)
-                        .setConstraints(myConstraints)
-                        .build();*/
         OneTimeWorkRequest.Builder loadConfigRequestBuilder =
                 new OneTimeWorkRequest.Builder(LoadAdcodeConfigWorker.class);
 
-        // 设置任务约束
-        Constraints myConstraints = new Constraints.Builder()
-                .setRequiresDeviceIdle(true)
-                .setRequiresCharging(true)
-                .build();
-
-        loadConfigRequestBuilder.setConstraints(myConstraints);
+        loadConfigRequestBuilder.setConstraints(constraints);
         loadConfigRequestBuilder.addTag(Constants.LOAD_ADCODES_CONFIG_WORK_NAME);
 
         OneTimeWorkRequest loadConfigWorkRequest = loadConfigRequestBuilder.build();
@@ -39,7 +34,7 @@ public class WorkerManagerImpl implements IWorkerManager {
     }
 
     @Override
-    public void periodicQueryWeather(){
+    public void periodicQueryWeather() {
         // 定时任务：PeriodicWorkRequest
         PeriodicWorkRequest.Builder timerQueryRequestBuilder =
                 new PeriodicWorkRequest.Builder(
@@ -49,12 +44,8 @@ public class WorkerManagerImpl implements IWorkerManager {
                         5,
                         TimeUnit.MINUTES);
 
-        Constraints myConstraints = new Constraints.Builder()
-                .setRequiresDeviceIdle(true)
-                .setRequiresCharging(true)
-                .build();
-        timerQueryRequestBuilder.setConstraints(myConstraints);
-        timerQueryRequestBuilder.addTag(Constants.HOUR_INCREMENT_WORK_NAME);
+        timerQueryRequestBuilder.setConstraints(constraints);
+        timerQueryRequestBuilder.addTag(Constants.PERIODIC_UPATE_WORK_NAME);
 
         PeriodicWorkRequest timerWorkRequest = timerQueryRequestBuilder.build();
         WorkManager.getInstance().enqueue(timerWorkRequest);
@@ -63,24 +54,17 @@ public class WorkerManagerImpl implements IWorkerManager {
 
     @Override
     public void queryCityWeather() {
-        // 分步任务
-        // 设置任务约束
-        Constraints myConstraints = new Constraints.Builder()
-                .setRequiresDeviceIdle(true)
-                .setRequiresCharging(true)
-                .build();
-
         // 任务分步1：查询当前天气
         OneTimeWorkRequest step1RequestBuilder =
                 new OneTimeWorkRequest.Builder(QueryCurrentWeatherWorker.class)
-                .setConstraints(myConstraints)
-                .addTag(Constants.QUERY_CURRENT_WEATHER_WORK_NAME)
-                .build();
+                        .setConstraints(constraints)
+                        .addTag(Constants.QUERY_CURRENT_WEATHER_WORK_NAME)
+                        .build();
 
         // 任务分步2：查询天气预报
         OneTimeWorkRequest step2RequestBuilder =
                 new OneTimeWorkRequest.Builder(QueryForecastWorker.class)
-                        .setConstraints(myConstraints)
+                        .setConstraints(constraints)
                         .addTag(Constants.QUERY_FORECAST_WORK_NAME)
                         .build();
 

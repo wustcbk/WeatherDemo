@@ -2,7 +2,8 @@ package com.gary.weatherdemo.workmanager;
 
 import android.support.annotation.NonNull;
 
-import com.gary.weatherdemo.utils.AddressAdcodeQueryUtils;
+import com.gary.weatherdemo.utils.AdcodeQueryUtils;
+import com.gary.weatherdemo.utils.LogUtils;
 
 import androidx.work.Worker;
 
@@ -18,7 +19,9 @@ public class LoadAdcodeConfigWorker extends Worker {
     @Override
     public Result doWork() {
         //加载高德Address-Adcode对照配置表
-        AddressAdcodeQueryUtils.getInstance().LoadAddressAdcodeConfig();
+        LogUtils.d(TAG, "doWork() start");
+        AdcodeQueryUtils.getInstance().loadAdcodeConfig();
+        LogUtils.d(TAG, "doWork() end");
         return Result.SUCCESS;
     }
 }

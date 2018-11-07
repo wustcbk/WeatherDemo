@@ -16,7 +16,7 @@ public class MainActivityViewModel {
     public final ObservableField<ForecastRecyclerAdapter> weatherAdapter = new ObservableField<>();
     private final ForecastRecyclerAdapter adapter;
     // TBD: LiveData
-    // private LiveData<ForecastPageInfo> cityPageInfo;
+    // private LiveData<AdcodeConfigInfo> cityPageInfo;
 
     public MainActivityViewModel() {
         adapter = new ForecastRecyclerAdapter();

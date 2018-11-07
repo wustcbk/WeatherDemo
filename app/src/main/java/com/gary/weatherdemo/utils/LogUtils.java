@@ -50,7 +50,7 @@ public class LogUtils {
 
     private static void LogIt(int LEVEL, String Tag, String Message) {
         if (BuildConfig.DEBUG) {
-            Log.println(LEVEL, Tag != null ? Tag : TAG, Message);
+            Log.println(LEVEL, TAG + " " + Tag, Message);
         }
     }
 }

@@ -51,7 +51,7 @@ public class ForecastConfigs {
 
     //===================================================================================================
     //for test
-    /*默認天氣城市設置為：深圳*/
+    /*默认天气：深圳*/
     private void setShenzhenForecastWeather() {
         //深圳:adcode:440300 citycode:0755
         ForecastConfigs.getInstance().setCurrentCityAdcode("440300");
