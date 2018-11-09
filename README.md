@@ -53,6 +53,7 @@
 
 -------
 ### Screenshots：
+![](https://github.com/wustcbk/WeatherDemo/blob/master/screenshots/admob_banner_screenshot.bmp)
 
 -------
 ### License
