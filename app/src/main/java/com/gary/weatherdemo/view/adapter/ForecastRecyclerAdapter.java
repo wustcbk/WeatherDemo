@@ -47,7 +47,6 @@ public class ForecastRecyclerAdapter extends RecyclerView.Adapter<ForecastRecycl
     }
 
 
-    /*TBD: GoF5: 策略模式: 分别实现当前和预报天气ViewHolder*/
     public class ForecastDayViewHolder extends RecyclerView.ViewHolder {
         private final WeatherForecastDayBinding binding;
 

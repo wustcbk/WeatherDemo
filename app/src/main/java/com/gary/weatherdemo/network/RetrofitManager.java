@@ -45,9 +45,6 @@ public class RetrofitManager {
                 .build();
     }
 
-    /**
-     * GoF1: 单例
-     */
     public synchronized static RetrofitManager getInstance() {
         if (retrofitManager == null) {
             retrofitManager = new RetrofitManager();

@@ -22,7 +22,6 @@ public class MainActivityViewModel {
         adapter = new ForecastRecyclerAdapter();
     }
 
-    /*GoF2: 观察者模式：注册监听&回调实现*/
     public void requestWeatherByCityName() {
         ForecastRequestClient.getInstance().forecastWeatherPost("440300")//深圳:adcode:440300
                 .subscribeOn(Schedulers.io())//设置1：在io子线程执行

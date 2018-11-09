@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ads demo test id-->
+    <!--<string name="admob_app_id">"ca-app-pub-3940256099942544~3347511713"</string>
+    <string name="admob_banner_ads_id">"ca-app-pub-3940256099942544/6300978111"</string>-->
+
+    <!--ads registered id-->
+    <string name="admob_app_id">"ca-app-pub-4914208157657122~8536527115"</string>
+    <string name="admob_banner_ads_id">"ca-app-pub-4914208157657122/7287433748"</string>
+</resources>

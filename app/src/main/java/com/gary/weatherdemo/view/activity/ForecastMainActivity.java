@@ -12,8 +12,7 @@ public class ForecastMainActivity extends BaseActivity {
     private MainActivityViewModel viewModel;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreateNew(Bundle savedInstanceState) {
         initViews();
     }
 

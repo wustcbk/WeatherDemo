@@ -19,7 +19,6 @@ public class ForecastRequestClient {
 
     private ApiService createApiClient() {
         if (apiService == null) {
-            /*GoF3: 抽象工厂*/
             apiService = RetrofitManager.getInstance().create(ApiService.class);
         }
         return apiService;
