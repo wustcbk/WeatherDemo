@@ -21,14 +21,28 @@
 
 - 网络请求：
 实现异步网络请求框架封装。
-- AdMob&Firebase（TBD）：
+- AdMob&Firebase：
 实现广告载入和统计分析。文档参照：https://www.jianshu.com/p/dcebf2c7c9e3
 - XML配置文件：
 解析存储本地存储高德adcode和城市信息对照表，用于本地天气动态查询api调用。
 
+-------
 
+### Android AdMob document：
+- [AdMob（Google移动广告）SDK指南](https://developers.google.com/admob/android/quick-start?hl=zh-CN#import_the_mobile_ads_sdk):
+- [Banner(横幅广告)](https://developers.google.com/admob/android/banner?hl=zh-CN)
+- [Interstitial（插页广告）](https://developers.google.com/admob/android/interstitial?hl=zh-CN)
+- [Native（原生广告）](https://developers.google.com/admob/android/native-unified?hl=zh-CN)
+- [Rewarded Video（应用内购买广告）](https://developers.google.com/admob/android/rewarded-video?hl=zh-CN)
+
+
+
+### Android Firebase document：
+- [Firebase 集成指南](https://developers.google.com/firebase/docs/android/setup?hl=zh-CN):
+
+
+-------
 ### Android Architecture Components document：
-
 - [Room](https://developer.android.google.cn/topic/libraries/architecture/room)
 - [Lifecycle components](https://developer.android.google.cn/topic/libraries/architecture/lifecycle)
 - [ViewModels](https://developer.android.google.cn/topic/libraries/architecture/viewmodel)
@@ -37,6 +51,6 @@
 - [Navigation](https://developer.android.google.cn/topic/libraries/architecture/navigation/)
 - [WorkManager](https://developer.android.google.cn/topic/libraries/architecture/workmanager/) 
 
-
+-------
 ### License
 部分业务机制借鉴网络资源，不能用于商业用途，转载请注明出处，谢谢！ 
