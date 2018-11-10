@@ -19,8 +19,6 @@ public abstract class BaseActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         onCreateNew(savedInstanceState);
-        /*ActionBar actionBar= getActionBar();
-        actionBar.hide();*/
         initAdMob();
     }
 
