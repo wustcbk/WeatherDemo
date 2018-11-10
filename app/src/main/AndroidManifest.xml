@@ -18,7 +18,9 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_app_id" />
 
-        <activity android:name=".view.activity.ForecastMainActivity">
+        <activity
+            android:name=".view.activity.ForecastMainActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

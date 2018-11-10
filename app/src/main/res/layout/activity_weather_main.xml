@@ -10,24 +10,12 @@
             type="com.gary.weatherdemo.viewmodel.MainActivityViewModel" />
     </data>
 
-    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:adapter="@{viewModel.weatherAdapter}" />
-    </LinearLayout>-->
-
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/city_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,24 +32,27 @@
                 android:layout_height="wrap_content"
                 android:text="深圳"
                 android:textSize="36dp" />
-        </LinearLayout>
+        </LinearLayout>-->
+        <com.example.commonui.ActionBar xmlns:actionbar="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            actionbar:tv_title="深圳" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/city_name"
+            android:layout_below="@+id/action_bar"
             app:adapter="@{viewModel.weatherAdapter}" />
 
-        <com.google.android.gms.ads.AdView
-            xmlns:ads="http://schemas.android.com/apk/res-auto"
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             ads:adSize="BANNER"
-            ads:adUnitId="@string/admob_banner_ads_id">
-        </com.google.android.gms.ads.AdView>
+            ads:adUnitId="@string/admob_banner_ads_id"></com.google.android.gms.ads.AdView>
     </RelativeLayout>
 </layout>

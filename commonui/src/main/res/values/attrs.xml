@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="actionBar">
+        <attr name="tv_title" format="string"/>
+        <attr name="iv_left" format="reference"></attr>
+        <attr name="iv_right" format="reference"></attr>
+    </declare-styleable>
+</resources>
