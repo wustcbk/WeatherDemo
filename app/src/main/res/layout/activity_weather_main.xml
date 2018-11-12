@@ -19,17 +19,45 @@
             android:id="@+id/action_bar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionbar_height"
-            android:gravity="center_vertical"
             android:background="@color/actionbar_background"
-            actionbar:tv_title_str="深圳"
+            android:gravity="center_vertical"
             actionbar:iv_left_icon="@drawable/ic_action_bar_left"
-            actionbar:iv_right_icon="@drawable/ic_action_bar_right"/>
+            actionbar:iv_right_icon="@drawable/ic_action_bar_right"
+            actionbar:tv_title_str="深圳" />
+
+        <LinearLayout
+            android:id="@+id/cur_weather_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/action_bar"
+            android:background="@color/forecast_item_background"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/cur_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="36dp" />
+
+            <TextView
+                android:id="@+id/cur_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="36dp" />
+
+        </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/action_bar"
+            android:layout_below="@+id/cur_weather_view"
             app:adapter="@{viewModel.weatherAdapter}" />
 
         <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -39,6 +67,6 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             ads:adSize="BANNER"
-            ads:adUnitId="@string/admob_banner_ads_id"/>
+            ads:adUnitId="@string/admob_banner_ads_id" />
     </RelativeLayout>
 </layout>

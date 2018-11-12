@@ -1,7 +1,7 @@
 package com.gary.weatherdemo.view.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.gary.weatherdemo.R;
 import com.google.android.gms.ads.AdListener;
@@ -12,7 +12,7 @@ import com.google.android.gms.ads.MobileAds;
 /**
  * Created by GaryCao on 2018/10/28.
  */
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends AppCompatActivity {
     private AdView mAdView;
 
     @Override

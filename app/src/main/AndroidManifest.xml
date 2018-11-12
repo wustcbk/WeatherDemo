@@ -19,8 +19,8 @@
             android:value="@string/admob_app_id" />
 
         <activity
-            android:name=".view.activity.ForecastMainActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar">
+            android:name=".view.activity.WeatherMainActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

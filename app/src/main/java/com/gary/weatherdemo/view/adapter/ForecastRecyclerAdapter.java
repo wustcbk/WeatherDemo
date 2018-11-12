@@ -15,7 +15,7 @@ import com.gary.weatherdemo.viewmodel.ForecastDayViewModel;
 import java.util.ArrayList;
 
 public class ForecastRecyclerAdapter extends RecyclerView.Adapter<ForecastRecyclerAdapter.ForecastDayViewHolder> {
-    private ArrayList<DayForecastData> weatherUIDataList = new ArrayList<>();
+    private ArrayList<DayForecastData> forecastDataList = new ArrayList<>();
 
     public ForecastRecyclerAdapter() {
     }
@@ -24,26 +24,26 @@ public class ForecastRecyclerAdapter extends RecyclerView.Adapter<ForecastRecycl
         if (null == allForecastResult) {
             return;
         }
-        weatherUIDataList.clear();
-        weatherUIDataList = (ArrayList<DayForecastData>) allForecastResult.dayForecastDataList;
+        forecastDataList.clear();
+        forecastDataList = (ArrayList<DayForecastData>) allForecastResult.dayForecastDataList;
         notifyDataSetChanged();
     }
 
     @Override
     public ForecastDayViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_weather_forecast_day, parent, false);
+                .inflate(R.layout.item_forecast_day, parent, false);
         return new ForecastDayViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(ForecastDayViewHolder holder, int position) {
-        holder.bind(weatherUIDataList.get(position));
+        holder.bind(forecastDataList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return weatherUIDataList.size();
+        return forecastDataList.size();
     }
 
 
