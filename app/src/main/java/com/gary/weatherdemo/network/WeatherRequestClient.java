@@ -9,11 +9,11 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Created by GaryCao on 2018/10/25.
  */
-public class ForecastRequestClient {
-    private static ForecastRequestClient forecastRequestClient;
+public class WeatherRequestClient {
+    private static WeatherRequestClient weatherRequestClient;
     private static ApiService apiService;
 
-    private ForecastRequestClient() {
+    private WeatherRequestClient() {
         createApiClient();
     }
 
@@ -24,11 +24,11 @@ public class ForecastRequestClient {
         return apiService;
     }
 
-    public synchronized static ForecastRequestClient getInstance() {
-        if (forecastRequestClient == null) {
-            forecastRequestClient = new ForecastRequestClient();
+    public synchronized static WeatherRequestClient getInstance() {
+        if (weatherRequestClient == null) {
+            weatherRequestClient = new WeatherRequestClient();
         }
-        return forecastRequestClient;
+        return weatherRequestClient;
     }
 
     /*高德天气：当前天气查询接口 Post*/
@@ -77,6 +77,6 @@ public class ForecastRequestClient {
     //for test
     /*高德天气：当前天气查询接口:深圳*/
     private void getShenzhenForecastWeather() {
-        ForecastRequestClient.getInstance().liveWeatherPost("440300");//深圳:adcode:440300 citycode:0755
+        WeatherRequestClient.getInstance().liveWeatherPost("440300");//深圳:adcode:440300 citycode:0755
     }
 }

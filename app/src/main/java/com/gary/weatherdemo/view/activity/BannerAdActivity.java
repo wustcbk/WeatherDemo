@@ -12,7 +12,7 @@ import com.google.android.gms.ads.MobileAds;
 /**
  * Created by GaryCao on 2018/10/28.
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BannerAdActivity extends AppCompatActivity {
     private AdView mAdView;
 
     @Override

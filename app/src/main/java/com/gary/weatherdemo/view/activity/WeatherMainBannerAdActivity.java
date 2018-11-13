@@ -1,6 +1,7 @@
 package com.gary.weatherdemo.view.activity;
 
 import android.arch.lifecycle.Observer;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,7 +17,7 @@ import com.gary.weatherdemo.model.LiveWeatherResult;
 import com.gary.weatherdemo.utils.LogUtils;
 import com.gary.weatherdemo.viewmodel.MainActivityViewModel;
 
-public class WeatherMainActivity extends BaseActivity implements IActionBarOnClickListener {
+public class WeatherMainBannerAdActivity extends BannerAdActivity implements IActionBarOnClickListener {
     private MainActivityViewModel viewModel;
     private ActionBar actionBar;
     private TextView curTempView;
@@ -35,11 +36,7 @@ public class WeatherMainActivity extends BaseActivity implements IActionBarOnCli
         binding.setViewModel(viewModel);
 
         initActionBar();
-
-        curTempView = findViewById(R.id.cur_temp);
-        curWeatherView = findViewById(R.id.cur_weather);
-        curView = findViewById(R.id.cur_weather_view);
-        subscribeCurWeather();
+        initCurWeather();
     }
 
     @Override
@@ -55,7 +52,14 @@ public class WeatherMainActivity extends BaseActivity implements IActionBarOnCli
         actionBar.setOnClickListener(this);
     }
 
-    private void subscribeCurWeather() {
+    private void initCurWeather() {
+        curTempView = findViewById(R.id.cur_temp);
+        curWeatherView = findViewById(R.id.cur_weather);
+        curView = findViewById(R.id.cur_weather_view);
+        updateCurWeatherView();
+    }
+
+    private void updateCurWeatherView() {
         viewModel.getLiveWeatherData().observe(this, new Observer<LiveWeatherResult>() {
             @Override
             public void onChanged(@Nullable LiveWeatherResult liveWeatherResult) {
@@ -68,11 +72,24 @@ public class WeatherMainActivity extends BaseActivity implements IActionBarOnCli
 
     @Override
     public void leftActBarItemClicked() {
-        LogUtils.d("rightActBarItemClicked()");
+        LogUtils.d("leftActBarItemClicked()");
     }
 
     @Override
     public void rightActBarItemClicked() {
         LogUtils.d("rightActBarItemClicked()");
+        showInterstitialAdActivity();
+    }
+
+    private void showInterstitialAdActivity() {
+        Intent intent = new Intent();
+        intent.setClassName("com.gary.weatherdemo", "com.gary.weatherdemo.view.activity.InterstitialAdActivity");
+        startActivity(intent);
+    }
+
+    private void showRewardedVideoAdActivity() {
+        Intent intent = new Intent();
+        intent.setClassName("com.gary.weatherdemo", "com.gary.weatherdemo.view.activity.RewardedVideoAdActivity");
+        startActivity(intent);
     }
 }

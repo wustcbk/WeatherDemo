@@ -19,7 +19,7 @@
             android:value="@string/admob_app_id" />
 
         <activity
-            android:name=".view.activity.WeatherMainActivity"
+            android:name=".view.activity.WeatherMainBannerAdActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,11 +32,19 @@
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_weather_config" />
         </receiver>
 
+        <activity
+            android:name=".view.activity.InterstitialAdActivity"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".view.activity.RewardedVideoAdActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

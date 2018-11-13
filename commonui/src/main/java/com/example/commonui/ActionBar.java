@@ -56,11 +56,11 @@ public class ActionBar extends RelativeLayout implements View.OnClickListener {
     public void setOnClickListener(IActionBarOnClickListener listener) {
         iActionBarOnClickListener = listener;
         if (null != leftActionView) {
-            leftActionView.setOnClickListener(null);
+            leftActionView.setOnClickListener(this);
         }
 
         if (null != rightActionView) {
-            rightActionView.setOnClickListener(null);
+            rightActionView.setOnClickListener(this);
         }
     }
 

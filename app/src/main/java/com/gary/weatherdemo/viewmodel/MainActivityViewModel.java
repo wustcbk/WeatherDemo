@@ -4,7 +4,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.databinding.ObservableField;
 
 import com.gary.weatherdemo.model.LiveWeatherResult;
-import com.gary.weatherdemo.network.ForecastRequestClient;
+import com.gary.weatherdemo.network.WeatherRequestClient;
 import com.gary.weatherdemo.network.response.AllForecastResponseData;
 import com.gary.weatherdemo.network.response.LiveWeatherResponseData;
 import com.gary.weatherdemo.view.adapter.ForecastRecyclerAdapter;
@@ -28,7 +28,7 @@ public class MainActivityViewModel {
     }
 
     public void requestWeatherByCityName() {
-        ForecastRequestClient.getInstance().liveWeatherPost("440300")//深圳:adcode:440300
+        WeatherRequestClient.getInstance().liveWeatherPost("440300")//深圳:adcode:440300
                 .subscribeOn(Schedulers.io())//设置1：在io子线程执行
                 .observeOn(AndroidSchedulers.mainThread()) //设置2：在UI主线程执行回调
                 .subscribe(new Observer<LiveWeatherResponseData>() {//设置3：UI主线程回調實現
@@ -55,7 +55,7 @@ public class MainActivityViewModel {
                     }
                 });
 
-        ForecastRequestClient.getInstance().forecastWeatherPost("440300")//深圳:adcode:440300
+        WeatherRequestClient.getInstance().forecastWeatherPost("440300")//深圳:adcode:440300
                 .subscribeOn(Schedulers.io())//设置1：在io子线程执行
                 .observeOn(AndroidSchedulers.mainThread()) //设置2：在UI主线程执行回调
                 .subscribe(new Observer<AllForecastResponseData>() {//设置3：UI主线程回調實現
