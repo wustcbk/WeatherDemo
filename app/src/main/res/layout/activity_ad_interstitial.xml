@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.RewardedVideoAdActivity">
+    android:layout_gravity="center"
+    tools:context=".firebase.admob.InterstitialAdActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,10 +15,11 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/rewarded_video_btn"
+            android:id="@+id/interstitial_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Rewarded Video Ad" />
+            android:text="Admob Interstitial Ad" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

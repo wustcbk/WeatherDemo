@@ -13,6 +13,7 @@ import com.example.commonui.ActionBar;
 import com.example.commonui.IActionBarOnClickListener;
 import com.gary.weatherdemo.R;
 import com.gary.weatherdemo.databinding.WeatherMainActivityBinding;
+import com.gary.weatherdemo.firebase.admob.BannerAdActivity;
 import com.gary.weatherdemo.model.LiveWeatherResult;
 import com.gary.weatherdemo.utils.LogUtils;
 import com.gary.weatherdemo.viewmodel.MainActivityViewModel;
@@ -78,18 +79,12 @@ public class WeatherMainBannerAdActivity extends BannerAdActivity implements IAc
     @Override
     public void rightActBarItemClicked() {
         LogUtils.d("rightActBarItemClicked()");
-        showInterstitialAdActivity();
+        startActivity("com.gary.weatherdemo.firebase.FirebaseListActivity");
     }
 
-    private void showInterstitialAdActivity() {
+    private void startActivity(String classname) {
         Intent intent = new Intent();
-        intent.setClassName("com.gary.weatherdemo", "com.gary.weatherdemo.view.activity.InterstitialAdActivity");
-        startActivity(intent);
-    }
-
-    private void showRewardedVideoAdActivity() {
-        Intent intent = new Intent();
-        intent.setClassName("com.gary.weatherdemo", "com.gary.weatherdemo.view.activity.RewardedVideoAdActivity");
+        intent.setClassName("com.gary.weatherdemo", classname);
         startActivity(intent);
     }
 }

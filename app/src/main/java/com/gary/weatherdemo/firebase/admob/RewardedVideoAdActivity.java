@@ -1,4 +1,4 @@
-package com.gary.weatherdemo.view.activity;
+package com.gary.weatherdemo.firebase.admob;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +21,7 @@ public class RewardedVideoAdActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rewarded_video_ad);
+        setContentView(R.layout.activity_ad_rewarded_video);
         initAdMob();
     }
 

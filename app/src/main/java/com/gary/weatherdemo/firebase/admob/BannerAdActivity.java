@@ -1,4 +1,4 @@
-package com.gary.weatherdemo.view.activity;
+package com.gary.weatherdemo.firebase.admob;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
