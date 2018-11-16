@@ -5,6 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.gary.weatherdemo.R;
 
+/**
+ * Created by GaryCao on 2018/11/16.
+ *
+ * Firebase Analytics
+ */
 public class AnalyticsActivity extends AppCompatActivity {
 
     @Override

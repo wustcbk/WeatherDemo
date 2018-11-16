@@ -70,7 +70,7 @@ public class FirebaseListActivity extends AppCompatActivity implements View.OnCl
                 startActivity("com.gary.weatherdemo.firebase.crashreport.CrashReportActivity");
                 break;
             case R.id.auth_btn:
-                startActivity("com.gary.weatherdemo.firebase.auth.AuthActivity");
+                startActivity("com.gary.weatherdemo.firebase.auth.AuthChooseActivity");
                 break;
             default:
                 break;

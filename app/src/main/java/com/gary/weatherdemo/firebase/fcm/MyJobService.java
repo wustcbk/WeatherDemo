@@ -5,6 +5,12 @@ import android.util.Log;
 import com.firebase.jobdispatcher.JobParameters;
 import com.firebase.jobdispatcher.JobService;
 
+
+/**
+ * Created by GaryCao on 2018/11/16.
+ *
+ * Firebase jobdispatcher：后台任务
+ */
 public class MyJobService extends JobService {
 
     private static final String TAG = "MyJobService";

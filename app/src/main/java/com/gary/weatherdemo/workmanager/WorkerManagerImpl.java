@@ -1,7 +1,7 @@
 package com.gary.weatherdemo.workmanager;
 
 import com.gary.weatherdemo.base.Constants;
-import com.gary.weatherdemo.utils.ForecastConfigs;
+import com.gary.weatherdemo.utils.WeatherConfigs;
 
 import java.util.concurrent.TimeUnit;
 
@@ -39,7 +39,7 @@ public class WorkerManagerImpl implements IWorkerManager {
         PeriodicWorkRequest.Builder timerQueryRequestBuilder =
                 new PeriodicWorkRequest.Builder(
                         PeriodicUpdateWorker.class,
-                        ForecastConfigs.getInstance().getUpdatePeriodicHourCount(),
+                        WeatherConfigs.getInstance().getUpdatePeriodicHourCount(),
                         TimeUnit.HOURS,
                         5,
                         TimeUnit.MINUTES);

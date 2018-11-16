@@ -7,14 +7,21 @@ import android.view.View;
 import android.widget.Button;
 
 import com.gary.weatherdemo.R;
+import com.gary.weatherdemo.firebase.admob.callback.AdListenerImpl;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
+/**
+ * Created by GaryCao on 2018/11/16.
+ *
+ * Admob 插页广告单元显示
+ */
 public class InterstitialAdActivity extends AppCompatActivity {
     private InterstitialAd mInterstitialAd;
     private Button btn;
+    private AdListener mListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,33 +37,9 @@ public class InterstitialAdActivity extends AppCompatActivity {
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial_ads_id));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-            }
 
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-            }
-
-            @Override
-            public void onAdOpened() {
-                // Code to be executed when the ad is displayed.
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
-            }
-
-            @Override
-            public void onAdClosed() {
-                // Code to be executed when when the interstitial ad is closed.
-            }
-        });
-
+        mListener = new AdListenerImpl();
+        mInterstitialAd.setAdListener(mListener);
 
         btn = findViewById(R.id.interstitial_btn);
         btn.setOnClickListener(new View.OnClickListener() {

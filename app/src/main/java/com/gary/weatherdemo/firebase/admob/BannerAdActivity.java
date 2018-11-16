@@ -4,16 +4,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.gary.weatherdemo.R;
+import com.gary.weatherdemo.firebase.admob.callback.AdListenerImpl;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
 /**
- * Created by GaryCao on 2018/10/28.
+ * Created by GaryCao on 2018/11/16.
+ *
+ * Admob 横幅广告单元显示
  */
 public abstract class BannerAdActivity extends AppCompatActivity {
     private AdView mAdView;
+    private AdListener mListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,34 +33,8 @@ public abstract class BannerAdActivity extends AppCompatActivity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-        mAdView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-            }
-
-            @Override
-            public void onAdOpened() {
-                // Code to be executed when an ad opens an overlay that
-                // covers the screen.
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app.
-            }
-
-            @Override
-            public void onAdClosed() {
-                // Code to be executed when when the user is about to return
-                // to the app after tapping on an ad.
-            }
-        });
+        mListener = new AdListenerImpl();
+        mAdView.setAdListener(mListener);
     }
 
     public abstract void onCreateNew(Bundle savedInstanceState);

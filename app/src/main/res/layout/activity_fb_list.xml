@@ -18,49 +18,49 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Admob Interstitial Ad" />
+            android:text="插页广告" />
 
         <Button
             android:id="@+id/rewarded_video_btn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Admob Rewarded Video Ad" />
+            android:text="激励广告" />
 
         <Button
             android:id="@+id/fcm_btn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Firebase cloud message" />
+            android:text="云推送(FCM)" />
 
         <Button
             android:id="@+id/remote_config_btn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Firebase remote config" />
+            android:text="云配置(Remote config)" />
 
         <Button
             android:id="@+id/analytics_btn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Firebase analytics" />
+            android:text="分析(Analytics)" />
 
         <Button
             android:id="@+id/crash_report_btn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Firebase crash report" />
+            android:text="崩溃报告(Crash report)" />
 
         <Button
             android:id="@+id/auth_btn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Firebase auth" />
+            android:text="身份认证" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

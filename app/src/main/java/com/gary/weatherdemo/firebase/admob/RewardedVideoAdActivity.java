@@ -4,18 +4,22 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.gary.weatherdemo.R;
+import com.gary.weatherdemo.firebase.admob.callback.RewardedVideoAdListenerImpl;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
+/**
+ * Created by GaryCao on 2018/11/16.
+ *
+ * Admob 激励广告单元显示
+ */
 public class RewardedVideoAdActivity extends AppCompatActivity {
     private RewardedVideoAd mRewardedVideoAd;
-    private RewardedVideoAdListener listener ;
+    private RewardedVideoAdListener listener;
     private Button btn;
 
     @Override
@@ -54,55 +58,5 @@ public class RewardedVideoAdActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-    }
-
-
-    private class RewardedVideoAdListenerImpl implements RewardedVideoAdListener{
-
-        @Override
-        public void onRewarded(RewardItem reward) {
-            Toast.makeText(getApplicationContext(), "onRewarded! currency: " + reward.getType() + "  amount: " +
-                    reward.getAmount(), Toast.LENGTH_SHORT).show();
-            // Reward the user.
-        }
-
-        @Override
-        public void onRewardedVideoAdLeftApplication() {
-            Toast.makeText(getApplicationContext(), "onRewardedVideoAdLeftApplication",
-                    Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onRewardedVideoAdClosed() {
-            Toast.makeText(getApplicationContext(), "onRewardedVideoAdClosed", Toast.LENGTH_SHORT).show();
-
-            // Load the next rewarded video ad.
-            // loadRewardedVideoAd();
-        }
-
-        @Override
-        public void onRewardedVideoAdFailedToLoad(int errorCode) {
-            Toast.makeText(getApplicationContext(), "onRewardedVideoAdFailedToLoad", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onRewardedVideoAdLoaded() {
-            Toast.makeText(getApplicationContext(), "onRewardedVideoAdLoaded", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onRewardedVideoAdOpened() {
-            Toast.makeText(getApplicationContext(), "onRewardedVideoAdOpened", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onRewardedVideoStarted() {
-            Toast.makeText(getApplicationContext(), "onRewardedVideoStarted", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onRewardedVideoCompleted() {
-            Toast.makeText(getApplicationContext(), "onRewardedVideoCompleted", Toast.LENGTH_SHORT).show();
-        }
     }
 }
